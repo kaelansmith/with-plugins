@@ -1,4 +1,4 @@
-export type Plugin<T> = (config: T) => Promise<T>;
+export type Plugin<T> = (config: T) => T | Promise<T>;
 
 export async function withPlugins<T>(
   config: T,
