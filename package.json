@@ -1,6 +1,6 @@
 {
   "name": "@kaelan/with-plugins",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A drop-in plugin system for your library's configuration objects.",
   "main": "dist/index",
   "types": "dist/index.d.ts",
