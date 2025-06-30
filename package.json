@@ -11,11 +11,11 @@
     }
   },
   "scripts": {
-    "dev": "tsc -p tsconfig.json -w",
+    "dev": "tsc -p tsconfig.json -w --preserveWatchOutput",
     "build": "npm run build-ts",
-    "build-ts": "tsc-silent -p tsconfig.json --suppress",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "zzz-postpublish": "git push && git push --tags"
+    "build-ts": "tsc-silent -p tsconfig.json --suppress @",
+    "clean": "rm -rf .turbo && rm -rf dist && npm run clean:modules",
+    "clean:modules": "rm -rf node_modules"
   },
   "repository": {
     "type": "git",
