@@ -1,6 +1,6 @@
 # with-plugins
 
-A type-safe, dead-simple, drop-in plugin system for JS/TS configuration objects -- whether it's for your own library/package/SDK, or someone else's. Oh and it's tiny -- literally a few lines of code.
+A type-safe, dead-simple, drop-in plugin system for JS/TS configuration objects (in just a few lines of code!), whether it's for your own library/package/SDK, or someone else's.
 
 ## Install
 
@@ -20,11 +20,14 @@ Example:
 import featuredImagePlugin from "package-xyz";
 import pluginWithOptions from "package-abc";
 
-const config = withPlugins({ // your package's config object:
+// your package's config object:
+const config = {
   fields: [{ name: "title", ... }, ...],
   optionX: true,
   ...
-}, [ // plugins array:
+}
+
+const pluginModifiedConfig = withPlugins(config, [ // plugins array:
   featuredImagePlugin, // a plugin that injects a "Featured Image" field into the base config's `fields` array
   pluginWithOptions({
     ...
@@ -65,7 +68,7 @@ const config = buildConfig({
 // in `your-package/buildConfig.ts`
 import { withPlugins, Plugin } from "@kaelan/with-plugins"
 
-export interface PackageConfig {
+export type PackageConfig = {
   fields: Field[];
   optionX: boolean;
   ...
