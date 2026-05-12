@@ -6,3 +6,4 @@ import { Plugin } from "./types";
  * @returns The final configuration object after all plugins have been applied.
  */
 export declare function withPlugins<T>(config: T, plugins: Plugin<T>[]): Promise<T>;
+//# sourceMappingURL=withPlugins.d.ts.map
