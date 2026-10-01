@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.withPlugins = void 0;
+exports.withPlugins = withPlugins;
 /**
  * Applies an array of plugins to a configuration object.
  * @param config The configuration object to apply the plugins to.
@@ -16,4 +16,3 @@ async function withPlugins(config, plugins) {
     }, Promise.resolve(config));
     return final;
 }
-exports.withPlugins = withPlugins;
