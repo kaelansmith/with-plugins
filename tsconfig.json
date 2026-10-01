@@ -8,7 +8,8 @@
     "declarationMap": true,
     "declarationDir": "dist",
     "strict": false,
-    "noEmit": false
+    "noEmit": false,
+    "moduleDetection": "auto"
   },
   "include": ["src/**/*"]
 }
