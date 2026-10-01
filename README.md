@@ -66,7 +66,7 @@ const config = buildConfig({
 
 // ========================================================
 // in `your-package/buildConfig.ts`
-import { withPlugins, Plugin } from "@kaelan/with-plugins"
+import { withPlugins, type Plugin } from "@kaelan/with-plugins"
 
 export type PackageConfig = {
   fields: Field[];
@@ -85,16 +85,16 @@ export async function buildConfig(config: PackageConfig): Promise<PackageConfig>
 }
 ```
 
-Note the usage of the `Plugin` generic type in the `PackageConfig` interface above.
+Note the usage of the `Plugin` generic type in the `PackageConfig` type.
 
 ### Building plugins with their own config objects
 
 In the above examples, the second plugin accepts its own config object. Here's the recommended design pattern for implementing this (TLDR: a function that returns a plugin function):
 
 ```ts
-import { PackageConfig } from "your-package"
+import { type PackageConfig } from "your-package"
 
-export interface PluginOptions {
+export type PluginOptions = {
   ...
 }
 
